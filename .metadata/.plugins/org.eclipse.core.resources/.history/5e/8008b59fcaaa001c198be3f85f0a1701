@@ -1,0 +1,23 @@
+package Quesions;
+
+public class SwappingNumbers {
+public static void main(String[] args) {
+	
+	//Swapping
+	
+	int a=300;
+	int b =484;
+	System.out.println("a = " + a + "  b = " + b);
+	
+	
+	//Third variable for swapping
+	int c;
+	c = a;
+	a = b;
+	b = c;
+	//interchanged the values and swapped
+	System.out.println("after swapping  a= " + a + "  b = " + b);
+	
+	
+}
+}

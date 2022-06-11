@@ -1,0 +1,99 @@
+package ExtentSparkReporter.Extent_Report;
+
+
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class ExtentReportdemo {
+
+	//Grobally setting the Report BCZ Have to call in @Test method
+	ExtentReports ER;
+	
+	@BeforeTest
+	public void extent() {
+		
+		//path of the project
+	String Location = System.getProperty("User.dir")+"//ExtentReport/index.html";
+	ExtentSparkReporter ESR = new ExtentSparkReporter(Location);
+    //Test Name
+	 ESR.config().setReportName("SPICEJET");
+	 //TEST TAB NAME SET
+	 ESR.config().setDocumentTitle("EXTENT REPORTER");
+	 
+	 ExtentReports ER=new ExtentReports();
+	 //Giving file location knowledge to the ER
+	 ER.attachReporter(ESR);
+	 //Giving the Tester Name
+	 ER.setSystemInfo("Tester of This ExtentReports is = ", "Vishwas shinde");
+		
+	}
+	
+	
+	
+
+	@org.testng.annotations.Test
+
+	public void Test() throws InterruptedException {
+
+		//monitor the results
+		ER.createTest("InitialDemo");
+	
+		
+		System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.spicejet.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(1000);
+		//System.out.println(driver.switchTo().alert().getText());               this will handled BY JAVA script
+		//driver.switchTo().alert().accept();                                    this will help to allow the alerts are present the window
+		driver.findElement(By.xpath("//div[text()='1 Adult']")).click();
+		Thread.sleep(1000);
+		
+		
+		int i=1;
+		while (i<9)
+		{
+			driver.findElement(By.xpath("//div[@data-testid='Adult-testID-plus-one-cta']")).click();
+			i++;
+		}
+		driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep']/parent::div)[5]")).click();
+		System.out.println(driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep']/parent::div)[5]")).getText());
+
+		driver.findElement(By.xpath("//div[contains(text(),'From')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-b5h31w r-95jzfe']) //div[text()='Bengaluru']")).click();       //this method is accepted by some off the experienced client.
+                                                                                                                        //they are assuming that this QA AUTOMATION TESTER id Quite Experienced.//driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-b5h31w r-95jzfe']) //div[contains(text(),'SAG')]")).click();   // Xpath is felt to the pool request that this QA AUTOMATION is very experienced		  
+		
+		//driver.findElement(By.xpath("//div[contains(text(),'BLR')]")).click();                                                  //some client dont wat this type of Xpath ----firstly want us to select the whole window then we need to select that CITY with CODE.
+		driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-14lw9ot r-11u4nky r-z2wwpe r-1phboty r-rs99b7 r-1loqt21 r-13awgt0 r-ymttw5 r-tju18j r-5njf8e r-1otgn73']) [2]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-14lw9ot r-z2wwpe r-1rjd0u6 r-1g94qm0 r-u8s1d r-8fdsdq']) //div[text()='Shirdi']")).click();                                                  
+	
+		//for calender we need to select as per the date also
+		driver.findElement(By.xpath("//div[@class='css-1dbjc4n r-14lw9ot r-11u4nky r-rs99b7 r-6koalj r-eqz5dr r-1pi2tsx r-pm9dpa r-1knelpx r-13qz1uu']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(@class,'css-1dbjc4n r-1awozwy r-19m6qjp r-156aje7 r-y47klf r-1phboty r-1d6rzhh r-1pi2tsx r-1777fci r-13qz1uu')]")).click();
+	   
+		
+		
+		
+		
+		//Breaking the flow After Run
+		ER.flush();
+    
+	}
+	
+	
+	
+	
+}
+	
+

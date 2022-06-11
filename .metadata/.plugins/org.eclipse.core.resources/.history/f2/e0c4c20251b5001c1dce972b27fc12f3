@@ -1,0 +1,13 @@
+package Arrays;
+
+public class Copyofarray {
+public static void main(String[] args) {
+	
+	String array ="vishwas babasaheb shinde";
+	String[] splited = array.split(" ");
+	
+	System.out.println(splited);
+	
+	
+}
+}

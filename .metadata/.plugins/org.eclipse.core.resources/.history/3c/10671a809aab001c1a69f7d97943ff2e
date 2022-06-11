@@ -1,0 +1,38 @@
+package Quesions;
+
+public class ReversString {
+public static void main(String[] args) {
+	 
+	//Logic 1
+	
+	String p ="Velocity";
+	String sum = "";
+	for(int i=p.length()-1;i>=0;i--) {
+		 sum= sum + p.charAt(i);
+	}
+	System.out.println(sum);
+	
+	//LOGIC 2
+	String l ="vishwas shinde";
+	l.toCharArray();
+	String sum1="";
+	for(int i=l.length()-1;i>=0;i--) {
+		sum1 =sum1 +l.charAt(i);
+	}
+	System.out.println(sum1);
+	
+	
+	
+	//LOGIC
+	
+	StringBuilder k =new StringBuilder();
+	k.append("Vishwas shinde");
+	k.reverse();
+	System.out.println(k);
+	
+	
+	
+	
+
+}
+}

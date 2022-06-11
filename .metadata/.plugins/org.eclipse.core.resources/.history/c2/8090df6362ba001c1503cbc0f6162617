@@ -1,0 +1,48 @@
+package Collection;
+
+import java.util.Vector;
+
+public class Vector1 {
+public static void main(String[] args) {
+	
+	
+	//initial capacity is 10
+	
+	
+	
+	Vector vec= new Vector();
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	
+	System.out.println(vec.capacity());
+	
+	
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
+}

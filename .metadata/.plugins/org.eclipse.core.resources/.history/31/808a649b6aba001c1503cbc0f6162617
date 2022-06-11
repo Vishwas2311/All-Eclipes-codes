@@ -1,0 +1,53 @@
+package Collection;
+
+import java.util.ArrayList;
+import java.util.Vector;
+
+public class Vector1 {
+public static void main(String[] args) {
+	// vector increasing by 100% -> consume lot of memory as compare to arraylist
+	
+	//initial capacity is 10
+	
+	ArrayList <Object> vec =new ArrayList<>();   //10*3/2 = 16  //50% //memoRY management
+	                                             //Not ThreadSafe  //Fast
+	
+	
+	//Vector vec= new Vector();                  //10*2 = 20   //100%  //Memory eating
+	                                             //Thread Safe    //Safe
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	vec.add("6");
+	vec.add("12");
+	vec.add("1");
+	vec.add("5");
+	
+	
+	//System.out.println(vec.capacity());   //Vector - > present in only Vector
+	
+	System.out.println(vec.size());     //ArrayList - > print the size
+	
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
+}

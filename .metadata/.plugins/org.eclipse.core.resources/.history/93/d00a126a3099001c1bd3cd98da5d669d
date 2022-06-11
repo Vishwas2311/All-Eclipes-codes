@@ -1,0 +1,94 @@
+package Patterns;
+
+public class Triangle {
+public static void main(String[] args) {
+   /* column
+     * down side
+         c
+       12345 
+row    *  
+right 1* 2 R1=c1           row number = column number
+    2* 22 r2=c2
+  R 3* 222 r3=c3
+    4* 2222 r4=c4
+    5* 22222 r5=c5
+     */
+	
+	
+	
+	
+	int q=5;
+	int p=5;
+	
+	for(int i=1;i<=p;i++) {
+		for(int j=1;j<=i;j++) {
+			System.out.print("2");
+		}
+		System.out.println();
+	}
+	
+	
+	
+	/*pyramid
+	 * 3333333     
+	 * 333333    
+	 * 33333      
+	 * 3333
+	 * 333
+	 * 33
+	 * 3
+	 * 
+	 * 	 */
+	
+	int x=5;
+    int y=5;
+    for(int i=1;i<=x;i++) {
+    	for(int j=5;j>=i;j--) {
+    		System.out.print("-");
+    	}
+    	System.out.println();
+    }
+	
+    
+    
+/*       
+ * inverted half rotated by 180 degree
+ *         9
+ *       9 9
+ *     9 9 9
+ *   9 9 9 9
+ * 9 9 9 9 9
+ */         
+    int r=5;
+   
+    
+    for(int i=1;i<=r;i++){
+    	for (int j=4;j>=i;j--) {
+    	System.out.print(" ");
+    	}
+    	for(int j=1;j<=i;j++) {
+    	System.out.print("9");
+    	}
+    	System.out.println();
+    }
+    
+    
+   //another way to build the program
+    int t=5;
+    
+    for (int i=1;i<=t;i++) {
+    	//inner loop space print
+         for(int j=1;j<=t-1;j++) {
+        	 System.out.print(" ");
+         }
+         //inner loop star print
+         for(int j=1;j<=i;j++) {
+        	 System.out.print("5");
+         }
+         System.out.println();
+    }
+    
+	
+	
+}
+}

@@ -1,0 +1,46 @@
+package PomClasses;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage extends getDataFromPropertyFile {
+
+	WebDriver driver;
+
+	@FindBy(xpath = "//div[contains(@class,'btn51Btn')]")
+	private WebElement Login_Signup;
+
+	@FindBy(xpath = "//input[@id='login_email1']")
+	private WebElement Email;
+
+	@FindBy(xpath = "//span[@class='absolute-center']")
+	private WebElement continue1;
+
+	@FindBy(xpath = "")
+	private WebElement password;
+
+	@FindBy(xpath = "")
+	private WebElement sumbit;
+
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	public void Email() {
+		Email.sendKeys("7743913257");
+		;
+	}
+
+	public void password() {
+		password.sendKeys("VBS@123");
+	}
+
+	public void Sumbit() {
+
+		sumbit.click();
+	}
+
+}

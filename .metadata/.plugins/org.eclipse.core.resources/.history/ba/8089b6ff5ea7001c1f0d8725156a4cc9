@@ -1,0 +1,27 @@
+package Java.Stream;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class DirectlyintoSTREAM {
+public static void main(String[] args) {
+	
+	//directlu storing the Strings in the Stream
+	List<String> Anames=Stream.of("Accrenture","Zescal","Amazon","Flipkart","Adam","Alekhya","Aradhya").sorted().filter(s->s.contains("A")).collect(Collectors.toList());
+	System.out.println(Anames);
+	
+	//printing counting
+	long r=Stream.of("Accrenture","Zescal","Amazon","Flipkart","Adam","Alekhya","Aradhya").filter(s->
+	{
+		s.startsWith("A");
+	return false ;
+	}).count();
+	System.out.println(r);
+	
+	
+	
+	
+	
+}
+}

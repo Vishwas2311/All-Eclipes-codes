@@ -1,0 +1,65 @@
+package object;
+
+public class AssigningWITHmethod {
+String customerName;
+String mobileBrand;
+int modelNO;
+int price;
+Float purchcedDate;
+String storeName;
+
+    void GiveInfo(String x,String a,int b,int c,Float d,String e)
+	{
+    	customerName=x;
+		mobileBrand=a;
+		modelNO=b;
+		price=c;
+		purchcedDate=d;
+		storeName=e;	
+	}
+
+   void GiveInfo2(String x,String a,int b,int c,Float d,String f)
+  	{
+      	customerName=x;
+  		mobileBrand=a;
+  		modelNO=b;
+  		price=c;
+  		purchcedDate=d;
+  		storeName=f;	
+  	}
+  	
+    
+	void PrintBill()
+	{
+		System.out.println(customerName);
+		System.out.println(mobileBrand);
+		System.out.println(modelNO);
+		System.out.println(price);
+		System.out.println(purchcedDate);
+		System.out.println(storeName);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//Assigning the valve directly to the function 		
+		AssigningWITHmethod billNo2 = new AssigningWITHmethod();
+		billNo2.GiveInfo2("Vishwas shisnde","REAL ME",3312,16999,23.5f,"KANCHAN SHOPY");		
+		billNo2.PrintBill();
+
+//Assigning the values to the variable with Object
+		AssigningWITHmethod sushant = new AssigningWITHmethod();
+		
+		sushant.GiveInfo("Suraj", "REALME", 3312,  18499,03.6f,"KANCHAN MOBILE SHOPY");
+		sushant.PrintBill();
+		
+		sushant.customerName="Sushant Shinde";
+		sushant.mobileBrand="Samsung";
+		sushant.modelNO=3312;
+		sushant.price=23000;
+		sushant.purchcedDate=26.01f;
+		sushant.storeName="GalaxyWorld";
+		sushant.PrintBill();
+		
+	}
+	
+}

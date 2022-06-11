@@ -1,0 +1,40 @@
+package practice;
+
+import java.util.Scanner;
+
+public class pallindrome {
+	public static void main(String[] args) {
+		
+		
+		Scanner scr=new Scanner(System.in);
+		int number =scr.nextInt(); 
+		int real=number;//756
+		int rem;
+		int sum = 0;
+		while(number>0) {
+			rem=number%10;              //6
+			sum=(sum*10)+rem;           //sum=(0*10)+6......sum=6      
+			number=number/10;
+		}
+		
+		
+		System.out.println(number);
+		
+		/*if(real==number) {
+			System.out.println("this is pallindrome number" + number);
+		}
+		else {
+			System.out.println("this is not pallindrome number");
+		}*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

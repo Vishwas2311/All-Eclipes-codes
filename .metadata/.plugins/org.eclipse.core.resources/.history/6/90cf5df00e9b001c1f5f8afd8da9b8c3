@@ -1,0 +1,19 @@
+package Arrays;
+
+public class SUM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+		int[] arrays= {12,45,78,45,89,24};
+		int sum=0;
+		for(int i=0;i<arrays.length;i++) {
+			sum +=sum;
+		}
+		
+		
+	}
+
+}

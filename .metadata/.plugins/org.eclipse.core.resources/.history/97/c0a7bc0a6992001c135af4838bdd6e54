@@ -1,0 +1,61 @@
+package object;
+
+public class AssigningWITHmethod {
+String customerName;
+String mobileBrand;
+int modelNO;
+int price;
+Float purchcedDate;
+String storeName;
+
+    /*void GiveInfo(String x,String a,int b,int c,Float d,String e)
+	{
+    	customerName=x;
+		mobileBrand=a;
+		modelNO=b;
+		price=c;
+		purchcedDate=d;
+		storeName=e;	
+	}*/
+
+   void GiveInfo(String x,String a,int b,int c,Float d,String e)
+  	{
+      	customerName=x;
+  		mobileBrand=a;
+  		modelNO=b;
+  		price=c;
+  		purchcedDate=d;
+  		storeName=e;	
+  	}
+  	
+    
+	void PrintBill()
+	{
+		System.out.println(customerName);
+		System.out.println(mobileBrand);
+		System.out.println(modelNO);
+		System.out.println(price);
+		System.out.println(purchcedDate);
+		System.out.println(storeName);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		AssigningWITHmethod billNo2 = new AssigningWITHmethod();
+		billNo2.GiveInfo("Vishwas shisnde","REAL ME",3312,16999,23.5f,"KANCHAN SHOPY");		
+		
+
+//Assigning the values to the variable with Object
+		AssigningWITHmethod sushant = new AssigningWITHmethod();
+		sushant.customerName="Sushant Shinde";
+		sushant.mobileBrand="Samsung";
+		sushant.modelNO=3312;
+		sushant.price=23000;
+		sushant.purchcedDate=26.01f;
+		sushant.storeName="GalaxyWorld";
+		sushant.PrintBill();
+		
+	}
+	
+}

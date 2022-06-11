@@ -1,0 +1,41 @@
+package LambdaTest;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+public class Assignment {
+public static void main(String[] args) {
+	
+	System.setProperty("webdriver.chrome.driver","V:\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.lambdatest.com/");
+	WebDriverWait explicit= new WebDriverWait(driver, 10);
+	WebElement wait = (WebElement) explicit.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[.='See All Integrations']")));
+	
+	JavascriptExecutor java =(JavascriptExecutor)driver;
+	java.executeScript("window.scrollBy(0,4000)");
+	
+	driver.findElement(By.xpath("//a[.='See All Integrations']")).sendKeys(Keys.CONTROL,Keys.ENTER);
+	
+	Set<String> windows=driver.getWindowHandles();
+	Iterator <String> it= windows.iterator();
+	String parent=it.next();
+	String child =it.next();
+	driver.switchTo().window(child);
+	String newwindow = driver.getTitle();
+	
+	Assert.assertEquals(wait, newwindow);
+	
+}
+}

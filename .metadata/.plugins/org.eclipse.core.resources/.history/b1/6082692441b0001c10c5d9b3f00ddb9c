@@ -1,0 +1,19 @@
+package String1;
+
+import org.testng.annotations.Test;
+
+@Test
+public class Revers {
+
+	public static void reversStrings() {
+		
+		String a= new String("Automation selenium Maven TestNG");
+		for(int i=a.length()-1;i<=0;i++) {
+			
+		a.charAt(i);
+		System.out.println(a);
+		}
+	
+	
+	}
+}

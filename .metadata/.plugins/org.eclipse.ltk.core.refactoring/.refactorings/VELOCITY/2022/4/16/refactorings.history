@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;Collection.Vector.java&apos; to &apos;Vector1.java&apos;&#x0D;&#x0A;- Original project: &apos;VELOCITY&apos;&#x0D;&#x0A;- Original element: &apos;Collection.Vector.java&apos;&#x0D;&#x0A;- Renamed element: &apos;Collection.Vector1.java&apos;" description="Rename compilation unit &apos;Vector.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;Collection{Vector.java" name="Vector1.java" references="false" stamp="1649768546771" version="1.0"/>
+</session>

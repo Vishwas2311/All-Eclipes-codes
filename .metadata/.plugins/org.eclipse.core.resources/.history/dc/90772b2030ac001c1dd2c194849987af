@@ -1,0 +1,45 @@
+package Quesions;
+
+import org.junit.Test;
+
+public class PalindromeNumber {
+    @Test
+	public void Palindrome() {
+    	
+    	//LOGIC 1
+		int sum=0;
+		int number = 16461;
+		int real=number;
+		//Reverse number
+		while (number>0) {
+			sum=sum*10+number%10;
+			number= number/10;
+			
+		}
+		System.out.println(sum);
+		//IF = Compare Real value with Sum
+		if (sum==real) {
+			System.out.println("This is Palindrome number");
+		}else {//Else not palindrome
+			System.out.println("This is not palindrome number");
+		}
+		
+		//LOGIC 2
+		 number=56865;
+		 real=56865;
+		 sum=0;
+		 for (int i=1;i<=5;i++) {
+			 sum=sum*10+number%10;
+			 number=number/10;
+		 }
+		System.out.println(sum);
+		if(sum==real) {
+			System.out.println("palindrome number");
+		}else {
+			System.out.println("Not palindrome");
+		}
+		
+		
+		
+	}
+}

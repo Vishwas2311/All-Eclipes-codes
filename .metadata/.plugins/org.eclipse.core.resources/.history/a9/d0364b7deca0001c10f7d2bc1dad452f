@@ -1,0 +1,27 @@
+package Calenederhandling;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class handlingwithdate {
+public static void main(String[] args) {
+	//Calendar handling 
+	
+	
+	System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.spicejet.com/");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+}

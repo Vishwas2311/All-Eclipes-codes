@@ -1,0 +1,19 @@
+package Forwhile.Dowhile;
+
+import java.util.Scanner;
+
+public class SUM {
+	public static void main(String[] args) {
+//		Scanner sc=new Scanner(System.in);
+//		System.out.println("enter the last numbers which you want to calculate sum of up to natural numbers");
+//		int n=sc.nextInt();
+		int sum = 0;
+		for(int i=1;i<=10;i++) {
+		
+			sum=sum+i;
+		}
+		System.out.println(sum);
+	
+	}
+
+}

@@ -1,0 +1,33 @@
+package PomClasses;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import UtilityClasses.UtilClasses;
+
+public class pin extends UtilClasses{
+	
+
+	@Test
+	public void PIN() throws IOException {
+
+		String pin = getDataFromPropertyFile("pin");
+
+		List<String> single = new ArrayList<String>();
+		single.add(pin);
+		
+		System.out.println(single);
+
+		for(int i=0; i<=single.size();i++) {
+			System.out.println(single.get(i));
+		}
+		
+		
+}
+}

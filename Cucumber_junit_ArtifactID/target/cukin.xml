@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.137">
+    <testcase classname="Flipkart login Functionality" name="home page degault login" time="0.031">
+        <system-out>
+            <![CDATA[Given check browser is launched.............................................passed
+When browser is launched....................................................passed
+Then check navigated to website.............................................passed
+Given User is on Flipkart login page........................................passed
+When User signup into application using below data..........................passed
+Then Home page is populated.................................................passed
+And search box is displayed "True"..........................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

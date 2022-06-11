@@ -1,0 +1,40 @@
+package exception;
+
+public class Exceptions {
+	public static void main(String[] args) {
+		
+		System.out.println("vishwas lerned java coding successfully");
+		                                //checked Exception  
+		//Thread.sleep(4000);          //Interrupted Exceptions.
+		
+		
+		
+		int a=133;
+		
+		//System.out.println(a/0);      //this is called as Unchecked Exception
+                                        //ArithmeticException
+		
+		String h=null;                   //Null pointer Exception
+		//System.out.println(h.length());
+		
+		String y="4657";                //converting the String value into integer
+		//int i=Integer.parseInt(y);
+		//System.out.println(i);
+		
+		
+
+		String p="ufi";                //Number format Exception
+		///int u=Integer.parseInt(p);
+		//System.out.println(u);
+		
+		
+		int arr[]=new int[5];
+		arr[6]=400;                     //array Index out of BoundEX
+
+//Null point Exception	
+//Number format Exception
+//array Index out of BoundEX
+	
+}
+
+}

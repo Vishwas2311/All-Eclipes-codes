@@ -1,0 +1,21 @@
+package zebra;
+
+public class lengthOfStringWithoutLength {
+
+	
+	public static void main(String[] args) {
+	
+	
+	String length= "lamborghini";
+	char [] k = length.toCharArray();
+	
+	int count=0;
+	for(char h : k) {
+		count++;
+	}
+	System.out.println(count);
+	
+	
+	
+	}
+}

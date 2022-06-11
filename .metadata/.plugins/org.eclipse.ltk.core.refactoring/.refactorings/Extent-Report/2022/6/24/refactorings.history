@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ExtentRepors&apos; to &apos;Velocity_Banking_domain&apos;&#x0D;&#x0A;- Original project: &apos;Extent-Report&apos;&#x0D;&#x0A;- Destination element: &apos;Velocity_Banking_domain&apos;&#x0D;&#x0A;- Original element: &apos;ExtentRepors&apos;" description="Copy folder" destination="=Velocity_Banking_domain" element1="ExtentRepors" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1654497507470" units="0" version="1.0"/>
+</session>

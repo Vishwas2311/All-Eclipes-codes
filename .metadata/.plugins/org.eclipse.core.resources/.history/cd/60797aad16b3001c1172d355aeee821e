@@ -1,0 +1,28 @@
+
+public class publicStaticVoidmain {
+    
+	int mobile =20;
+    String a="Velocity";
+	public void display (){
+		System.out.println(mobile);
+		System.out.println(a);
+	}
+	private publicStaticVoidmain() {
+		String a= "velocity";
+		
+	}
+	
+	public publicStaticVoidmain(String a) {
+	   this.a = a;
+	}
+	
+	public static void main(String[] args) {
+		publicStaticVoidmain k = new publicStaticVoidmain();
+		k.mobile=699;
+		k.display();
+		k.a="tfgtfggjgj";
+		//k.display();
+	}
+	
+	
+}

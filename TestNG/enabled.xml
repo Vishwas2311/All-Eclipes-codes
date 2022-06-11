@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Before Class and After Class">
+  <test thread-count="5" name="Test1">
+  <classes>
+  
+  <class name="Test.Enabled"/>
+  
+  
+  </classes>
+  </test>
+</suite> <!-- Suite -->

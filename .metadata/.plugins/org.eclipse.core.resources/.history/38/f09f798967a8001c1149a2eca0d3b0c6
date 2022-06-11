@@ -1,0 +1,22 @@
+package Java.Stream;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class ConcatinationARRAY {
+public static void main(String[] args) {
+	
+
+	// Declaring the Array list
+	List<String> names=Arrays.asList("Accrenture","Zescal","Amazon","Flipkart","Adam","Alekhya","Aradhya");
+	//Declaring the 2nd ARRAY List
+	List<String> names2=Arrays.asList("Arun","Avinash","Aradhya","Arya","Ashish");
+	
+	
+	Stream<String> R =Stream.concat(names.stream(), names2.stream());
+
+	R.
+	
+}
+}

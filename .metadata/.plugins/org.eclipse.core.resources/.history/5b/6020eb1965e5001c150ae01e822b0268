@@ -1,0 +1,72 @@
+package Groww;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import BaseClasses.BaseClass1;
+import PomClasses.HomePage;
+import PomClasses.LoginPage;
+import UtilityClasses.UtilClasses;
+
+public class Groww {
+	static WebDriver driver;
+	static HomePage home;
+	static LoginPage login;
+	static UtilClasses util;
+	
+
+	ExtentHtmlReporter extent;
+	ExtentReports report;
+	ExtentTest test;
+	
+	
+
+
+	@Parameters("Browser")
+	@BeforeClass
+	public void beforeclass(String Bname) {
+		extent = new ExtentHtmlReporter("ExtentRepors\\ExtentRepors.html");
+		report = new ExtentReports();
+		test = report.startTest("VerifyUserCanBuyProduct");
+
+		
+		driver = BaseClass1.WebDriver(Bname);
+	}
+
+	@BeforeMethod
+	public void BeforeMethod() {
+		home = new PomClasses.HomePage(driver);
+		login = new PomClasses.LoginPage(driver);
+		util = new UtilityClasses.UtilClasses();
+	}
+
+	@Test
+	public void verifyUserCanLogin() throws IOException {
+		login.Click_Login_Signup();
+		login.Email();
+		login.continue1();
+		login.password();
+		login.sumbit();
+
+	}
+
+	@Test(dependsOnMethods="verifyUserCanLogin")
+	public void VerifyUser() throws IOException {
+
+		home.clickOnAccount();
+		String email = home.GetEmailIdText();
+		String realemail=util.getDataFromPropertyFile("email");
+		Assert.assertEquals(email, realemail);
+	}
+
+}

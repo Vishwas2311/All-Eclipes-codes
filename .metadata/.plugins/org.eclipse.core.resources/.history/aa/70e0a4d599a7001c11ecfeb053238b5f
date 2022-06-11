@@ -1,0 +1,54 @@
+package Arrays;
+
+import java.util.Arrays;
+
+public class Bigestarray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//initialization & declaration at same time
+		long [] arrays= {36,75,8,7,93,67,75,67,53,56,86,79,8,53,24,64};
+		
+	    long largest=arrays[0]; 
+		
+		for(long each : arrays) {
+			if(largest < each) {           //just change the sign then you will get smallest number
+				largest = each;
+			}
+		}
+		System.out.println("largest value "+largest);
+		
+		
+		
+		
+		
+	
+		
+		for(int i=0;i<(arrays.length-1);i++) {
+			for(int j=i+1;j<arrays.length;i++) {
+				
+				if(arrays[i] < arrays[j]) {
+					
+					long r = arrays[j];
+					arrays[j]=  arrays[i];
+					arrays[i]= r;
+					
+					
+				}
+		    }System.out.println(Arrays.toString(arrays));
+		}
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+	}

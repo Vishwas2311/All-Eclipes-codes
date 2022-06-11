@@ -1,0 +1,34 @@
+package PomClasses;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import UtilityClasses.UtilClasses;
+
+public class pin extends UtilClasses{
+	
+	static WebDriver driver;
+	
+	
+	public void PIN() throws IOException {
+		explicitwait(driver, driver.findElement(By.xpath("(//input[@type='number'])[1]")));
+
+		String pin = getDataFromPropertyFile("pin");
+
+		List<String> single = new ArrayList<String>();
+		single.add(pin);
+		System.out.println(single);
+
+		List<WebElement> list = driver.findElements(By.xpath("(//input[@type='number'])"));
+
+		// Waiting for first element
+
+		for (int i = 1; i <= single.size(); i++) 
+			list.get(i-1).sendKeys(single.get(i));
+		}
+}

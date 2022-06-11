@@ -1,0 +1,120 @@
+package TestClasses;
+
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.reporters.TestHTMLReporter;
+
+import com.relevantcodes.extentreports.ExtentReports;
+
+import BaseClasses.BaseClass1;
+import ExtentHtmlReporter.ExtentReporter;
+import PomClasses.ProductPage;
+import UtilityClasses.UtilityClasses;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+public class FlipkartChome {
+
+	static WebDriver driver;
+	static PomClasses.LoginFindBy login;
+	static PomClasses.HomePageFlipkartFindBy home;
+	static ProductPage product;
+
+<<<<<<< HEAD
+
+	
+	
+	
+	
+=======
+>>>>>>> Automation
+	static ExtentReports extent;
+
+	@BeforeTest
+	public void ExtentHtmlReporter() {
+
+	}
+
+	@Parameters("Browser")
+	@BeforeClass
+	public void beforeClass(String d) {
+
+		driver = BaseClass1.WebDriver(d);
+	}
+
+	@BeforeMethod
+	public void BeforeMethod() throws InterruptedException {
+		login = new PomClasses.LoginFindBy(driver);
+		home = new PomClasses.HomePageFlipkartFindBy(driver);
+		product = new ProductPage(driver);
+	}
+
+	@Test
+	public void login() throws IOException {
+		login.Email();
+		login.password();
+		login.Sumbit();
+		Assert.assertTrue(home.verifyaccount());
+	}
+
+	@Test
+	public void productsearching() throws EncryptedDocumentException, IOException {
+		String products = home.getExceldata("TestData1", 0, 0);
+		System.out.println(products);
+		home.SearchBox(products);
+		home.Search();
+		Assert.assertTrue(home.isProductVisible());
+	}
+
+	@Test(dependsOnMethods = { "productsearching" })
+	public void VerifyUserCanSelectProduct() {
+		home.ClickOnFirstProduct();
+		Assert.assertTrue(ProductPage.BuyNowIsVisible());
+		ProductPage.ClickADDtoCart();
+	}
+
+	@Test(dependsOnMethods = { "VerifyUserCanSelectProduct" })
+	public void VerifyUserCanPlaceOrder() throws InterruptedException {
+		ProductPage.PlaceOrder();
+		ProductPage.clickOnContiueButton();
+		product.CasgOnDelivery();
+
+	}
+
+//	@Test
+//	public void verifyorderplaced() {
+//
+//		System.out.println("test has been failed");
+//		Assert.fail();
+//	}
+//
+//	@Test(dependsOnMethods = { "verifyorderplaced" })
+//	public void ordernumberverification() {
+//
+//		System.out.println("test skipped");
+//
+//	}
+
+	@DataProvider
+	public Object[][] dataDriving() {
+		Object[][] list = new Object[3][1];
+
+		list[0][0] = " i phone";
+
+		list[1][0] = " i phone 12 pro max";
+
+		list[2][0] = " i phone 13 pro max";
+
+		return list;
+
+	}
+
+}

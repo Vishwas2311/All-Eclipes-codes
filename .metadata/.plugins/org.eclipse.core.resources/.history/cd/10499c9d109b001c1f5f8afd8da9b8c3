@@ -1,0 +1,53 @@
+package Arrays;
+
+public class SUM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//to get the sum of all numbers 
+		int[] arrays= {12,45,78,45,89,24};
+		int sum=0;
+		for(int elements:arrays) {
+			sum =sum+elements;
+		}
+		System.out.println(sum);
+		
+		
+		//to find the one number from the list
+		int a=8;
+		boolean same=true;
+		for(int everyarray:arrays) {
+			if(everyarray==a) {
+				 same = true ;
+			}
+		}
+		
+		if(same) {
+			System.out.println("we got the same arrays");
+		}
+		else {
+			System.out.println("not found the arrays");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

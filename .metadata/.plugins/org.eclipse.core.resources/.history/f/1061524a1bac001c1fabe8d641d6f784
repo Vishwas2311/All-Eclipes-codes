@@ -1,0 +1,29 @@
+package Quesions;
+
+
+
+
+
+
+public class EvenOddFromNumber {
+
+	public static void main(String[] args) {
+	
+		
+		int number=163765436;
+	 while (number>0) {
+		 
+		 number=number%10;
+	     number=number/10;
+		if( number%2==0) {
+			System.out.println("number is even" + number);
+		}
+		else {
+			System.out.println("Odd number" + number);
+			number=number/10;
+		}
+	 }
+	
+	
+}
+}

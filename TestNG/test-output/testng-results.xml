@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="5" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-15T17:29:41 IST" name="Before Class and After Class" finished-at="2022-04-15T17:29:41 IST" duration-ms="38">
+    <groups>
+    </groups>
+    <test started-at="2022-04-15T17:29:41 IST" name="Test1" finished-at="2022-04-15T17:29:41 IST" duration-ms="38">
+      <class name="Test.Enabled">
+        <test-method signature="bike()[pri:0, instance:Test.Enabled@6dbb137d]" started-at="2022-04-15T17:29:41 IST" name="bike" finished-at="2022-04-15T17:29:41 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bike -->
+        <test-method signature="demo1()[pri:0, instance:Test.Enabled@6dbb137d]" started-at="2022-04-15T17:29:41 IST" name="demo1" finished-at="2022-04-15T17:29:41 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- demo1 -->
+        <test-method signature="car()[pri:0, instance:Test.Enabled@6dbb137d]" started-at="2022-04-15T17:29:41 IST" name="car" finished-at="2022-04-15T17:29:41 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- car -->
+        <test-method signature="dependent()[pri:0, instance:Test.Enabled@6dbb137d]" started-at="2022-04-15T17:29:41 IST" name="dependent" finished-at="2022-04-15T17:29:41 IST" depends-on-methods="Test.Enabled.demo1" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dependent -->
+      </class> <!-- Test.Enabled -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Before Class and After Class -->
+</testng-results>

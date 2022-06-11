@@ -1,0 +1,164 @@
+package Flipkart;
+
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+import com.google.common.base.MoreObjects.ToStringHelper;
+
+import ProjectObjectPatternRepository.FlipkartHomePage;
+import ProjectObjectPatternRepository.ObjectRepository;
+
+ class MyException extends Exception {
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+
+		return "YOU LEFT SOME ITEMS IN YOUR CART";
+	}
+	
+	@Override
+	public String getMessage() {
+		// TODO Auto-generated method stub
+		return "PLEASE MAKE SURE YOUR CART IS EMPTY THEN PERFORM TEST AGAIN";
+	}
+}
+
+
+
+public class FlipkartVegitables {
+
+	
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "V:\\Self study\\chromedriver_win32\\chromedriver.exe");
+	    WebDriver driver=new ChromeDriver();
+	    driver.manage().window().maximize();
+	    driver.get("https://www.flipkart.com/");
+	    
+	    ObjectRepository repo=new ObjectRepository(driver);
+	    repo.EmailMobile().sendKeys("8983645402");
+	    repo.password().sendKeys("VBS@123");
+		repo.submit().click();
+		Thread.sleep(5000);
+		
+		//verification
+		String Expected = "vishwas";
+		String Real=driver.findElement(By.xpath("//div[@class='exehdJ']")).getText();	
+		System.out.println(Real);
+		//Verified user
+		Assert.assertEquals(Expected, Real);
+		
+		//search Box
+		//driver.findElement(By.xpath("//div[contains(text(),'Grocery')]")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//driver.findElement(By.xpath("//button[@type='button']")).click();
+		Thread.sleep(3000);
+		FlipkartHomePage homepage=new FlipkartHomePage(driver);
+		homepage.SearchBox().sendKeys("vegetables",Keys.CONTROL.ENTER );
+		
+
+		//which colours do you want ??
+		String [] arr= {"Cabbage","Mango"};
+		
+		Thread.sleep(2000);
+		
+		//method with full code
+		coding(driver,arr);
+
+	Thread.sleep(2000);
+		
+	Set<String> window=driver.getWindowHandles();
+		Iterator<String>it=window.iterator();
+		String w0=it.next();
+		String w1=it.next();
+		String w2=it.next();
+		//String w3=it.next();
+		try {
+		driver.switchTo().window(w1);
+		driver.findElement(By.cssSelector("input._36yFo0")).sendKeys("411014");
+		driver.findElement(By.cssSelector("span._2P_LDn")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[contains(text(),'ADD TO BASKET')]")).click();
+		driver.switchTo().window(w2);
+		driver.findElement(By.cssSelector("input._36yFo0")).sendKeys("411014");
+		driver.findElement(By.cssSelector("span._2P_LDn")).click();
+		Thread.sleep(2000);		
+		driver.findElement(By.xpath("//button[contains(text(),'ADD TO BASKET')]")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		throw new MyException();
+		}
+		catch(Exception e) {
+	
+			System.out.println(e.getMessage());
+			System.out.println(e.toString());
+			
+			
+		}
+		finally {
+		driver.findElement(By.xpath("//button[text()='GO TO BASKET']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'Place Order')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[text()='Deliver Here']")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+		driver.findElement(By.xpath("//button[text()='CONTINUE']")).click();
+		//driver.findElement(By.xpath("//button[text()='Accept & Continue']")).click();
+	}}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private static void coding(WebDriver driver, String[] arr) throws InterruptedException {
+		// TODO Auto-generated method stub
+		//catching names
+		List<WebElement> AllList=driver.findElements(By.xpath("//a[@class='s1Q9rs']"));
+		
+		   int j=0;
+		for(int i=0;i<AllList.size();i++) {
+			
+			String [] name =AllList.get(i).getText().split(" ");
+			String formatedname=name[0].trim();
+		
+			System.out.println(formatedname);
+			
+			//My selected Color into list
+			List<String> Veggies=Arrays.asList(arr);
+			
+			if(Veggies.contains(formatedname)) {
+				
+				System.out.println(Veggies);
+				Thread.sleep(3000);
+				j++;
+				driver.findElements(By.xpath("//img[@class='_396cs4 _3exPp9']")).get(i).click();	
+			}
+			
+			if(j==arr.length) {
+				break;
+			}
+			
+		}
+	}//
+	
+	
+	
+
+}
+

@@ -1,0 +1,53 @@
+package Collection;
+
+import java.util.HashSet;
+
+public class HashSet2 {
+	
+	public static void main(String[] args) {
+		
+
+	//set1
+		HashSet <Integer> even =new HashSet<>();
+		
+		even.add(2);
+		even.add(4);
+		even.add(6);
+		even.add(8);
+		even.add(10);
+		even.add(12);
+		
+		//Addall method
+		HashSet<Integer> number=new HashSet<>();
+		number.addAll(even);
+		number.add(70);
+		System.out.println("even-> "+number); // [2, 4, 6, 70, 8, 10, 12]
+		
+		//remove All
+		number.removeAll(even);
+		System.out.println((number));  //[70]
+		
+		
+		//set2
+		HashSet <Integer> odd=new HashSet<>();
+		odd.add(1);
+		odd.add(3);
+		odd.add(5);
+		odd.add(7);
+		odd.add(2);
+		System.out.println("odd ->"+ odd);  //odd ->[1, 3, 5, 7]
+		
+		//union -> adding set1 into set 2
+		odd.addAll(even);
+		System.out.println(odd); //[1, 2, 3, 4, 5, 6, 7, 8, 10, 12]
+		
+		
+		//interaction - > retain all 
+		 even.retainAll(odd); //except odd element it will remove all element
+		System.out.println(even);
+		
+		//difference -> remoeve
+		 even.removeAll(odd);
+		 System.out.println(even);
+	}
+}

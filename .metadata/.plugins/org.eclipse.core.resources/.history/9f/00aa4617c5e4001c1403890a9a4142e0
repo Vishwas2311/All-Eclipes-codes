@@ -1,0 +1,18 @@
+
+public class StaticBlocks {
+
+	static {
+
+		System.out.println("jjjj");
+	}
+
+	public static void main(String[] args) {
+		System.out.println("hill");
+	}
+
+	static {
+
+		System.out.println("jjjj2222");
+	}
+
+}

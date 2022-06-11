@@ -1,0 +1,43 @@
+package overloading;
+
+public class overloading {
+	
+static int a;
+static int b;
+static int c;
+int d;
+int p;
+String r;
+
+ void display (int x,int y,int z)
+{
+	 a=x;
+	 b=y;
+	 c=z;
+	  System.out.println(a+b+c);
+}
+ 
+ void display(int o,int i,String t)
+ {
+        d=o;
+        p=i;
+        r=t;
+	System.out.println(d+p+r); 
+ }
+ 
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		overloading variable=new overloading();
+		
+		
+		variable.display(699, 546, "user");
+		
+		variable.display(477, 799, 98);
+	    
+		
+	
+	}
+
+}

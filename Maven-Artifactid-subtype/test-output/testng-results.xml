@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-29T11:59:50Z" name="Suite" finished-at="2022-05-29T11:59:50Z" duration-ms="32">
+    <groups>
+    </groups>
+    <test started-at="2022-05-29T11:59:50Z" name="Test" finished-at="2022-05-29T11:59:50Z" duration-ms="32">
+      <class name="Maven_project.Maven_Artifactid_subtype.AppiumTest">
+        <test-method signature="mobileTesting()[pri:0, instance:Maven_project.Maven_Artifactid_subtype.AppiumTest@6057aebb]" started-at="2022-05-29T17:29:50Z" name="mobileTesting" finished-at="2022-05-29T17:29:50Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileTesting -->
+        <test-method signature="mobileUI()[pri:0, instance:Maven_project.Maven_Artifactid_subtype.AppiumTest@6057aebb]" started-at="2022-05-29T17:29:50Z" name="mobileUI" finished-at="2022-05-29T17:29:50Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobileUI -->
+      </class> <!-- Maven_project.Maven_Artifactid_subtype.AppiumTest -->
+      <class name="Maven_project.Maven_Artifactid_subtype.SeleniumTest">
+        <test-method signature="FlipkartLogin()[pri:0, instance:Maven_project.Maven_Artifactid_subtype.SeleniumTest@332729ad]" started-at="2022-05-29T17:29:50Z" name="FlipkartLogin" finished-at="2022-05-29T17:29:50Z" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FlipkartLogin -->
+        <test-method signature="FlipkartLogout()[pri:0, instance:Maven_project.Maven_Artifactid_subtype.SeleniumTest@332729ad]" started-at="2022-05-29T17:29:50Z" name="FlipkartLogout" finished-at="2022-05-29T17:29:50Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FlipkartLogout -->
+      </class> <!-- Maven_project.Maven_Artifactid_subtype.SeleniumTest -->
+      <class name="Maven_project.Maven_Artifactid_subtype.RestAPITest">
+        <test-method signature="RestSwiggy()[pri:0, instance:Maven_project.Maven_Artifactid_subtype.RestAPITest@3370f42]" started-at="2022-05-29T17:29:50Z" name="RestSwiggy" finished-at="2022-05-29T17:29:50Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RestSwiggy -->
+        <test-method signature="RestZomato()[pri:0, instance:Maven_project.Maven_Artifactid_subtype.RestAPITest@3370f42]" started-at="2022-05-29T17:29:50Z" name="RestZomato" finished-at="2022-05-29T17:29:50Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RestZomato -->
+      </class> <!-- Maven_project.Maven_Artifactid_subtype.RestAPITest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

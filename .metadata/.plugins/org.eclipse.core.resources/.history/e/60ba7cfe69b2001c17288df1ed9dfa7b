@@ -1,0 +1,29 @@
+package lambdatest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class TestScenario1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver","V:\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.lambdatest.com/selenium-playground/");
+		driver.findElement(By.xpath("//a[.='Simple Form Demo']")).click();
+		
+		String name1 ="simple-form-demo";
+		String link1 = driver.findElement(By.xpath("//a[.='Simple Form Demo']")).getText();
+		
+		Assert.assertEquals(link1, name1);	
+		
+		
+		
+		
+	}
+
+}

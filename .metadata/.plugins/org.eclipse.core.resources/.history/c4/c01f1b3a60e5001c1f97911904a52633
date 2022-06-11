@@ -1,0 +1,14 @@
+package ExtentReport;
+
+import org.testng.annotations.Test;
+
+public class ExtentHtmlReporter {
+
+	@Test
+	public void ExtentHtmlReporter() {
+	ExtentHtmlReporter Extent =new ExtentHtmlReporter();
+	
+	
+	
+	
+}}

@@ -1,0 +1,26 @@
+package zebra;
+
+import java.util.ArrayList;
+
+public class DuplicatesInString {
+	public static void main(String[] args) {
+
+		String str = "beautiful beach";
+		char[] charray = str.toCharArray();
+
+		ArrayList<String> list = new ArrayList<>();
+
+		for (int i = 0; i <= charray.length; i++) {
+			int count = 0;
+			for (int j = i + 1; j <= charray.length; j++) {
+				if (charray[i] == charray[j]) {
+
+					count++;
+				}
+
+			}
+
+		}
+
+	}
+}

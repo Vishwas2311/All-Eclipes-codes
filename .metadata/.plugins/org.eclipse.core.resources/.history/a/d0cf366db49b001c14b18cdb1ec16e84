@@ -1,0 +1,39 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Armstrong {
+public static void main(String[] args) {
+	
+	
+	//ARMSTRONG IS 	cubes of all number is gives the original number
+	
+	Scanner scr =new Scanner(System.in);
+	
+	int key = 0;
+	
+	do {
+		System.out.println("Enter the number which you want to check as a Armstrong number");
+	int number=scr.nextInt();
+	int realvalue=number;
+	int rem=0;
+	int sum=0;
+	
+		
+	while(number>0) {               //317
+		rem=number%10;
+		sum=(rem*rem*rem)+sum;
+		number=number/10;
+	}
+	if(realvalue==sum) {
+		System.out.println("Armstrong number");
+	}else {
+		System.out.println("Not Armstrong number");
+	}
+	System.out.println("if you want to check more ??   prees YES [1] & NO[2]");
+	  key=scr.nextInt();
+	  
+	}while( key == 1);
+	
+}
+}

@@ -1,0 +1,90 @@
+package Groww;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import BaseClasses.BaseClass1;
+import ExtentReport.ExtentHtmlReporterv;
+import PomClasses.HomePage;
+import PomClasses.LoginPage;
+import UtilityClasses.UtilClasses;
+
+public class Groww {
+	static WebDriver driver;
+	static HomePage home;
+	static LoginPage login;
+	static UtilClasses util;
+	
+	static ExtentHtmlReporter htmlreporter; 
+	static ExtentReports reports ;
+	static ExtentTest test;
+	
+	@BeforeTest
+	public void ExtentReport() {
+
+		 htmlreporter=new ExtentHtmlReporter("ExtentReports\\ExtentReports.html");
+		 reports= new ExtentReports();
+		 reports.attachReporter(htmlreporter);
+		 test= reports.createTest("Verify User can Buy Products");
+	}
+	
+	
+	@Parameters("Browser")
+	@BeforeClass
+	public void beforeclass(String Bname) {
+		driver = BaseClass1.WebDriver(Bname);
+	}
+
+	@BeforeMethod
+	public void BeforeMethod() {
+		home = new PomClasses.HomePage(driver);
+		login = new PomClasses.LoginPage(driver);
+		util = new UtilityClasses.UtilClasses();
+	
+	}
+
+	@Test
+	public void verifyUserCanLogin() throws IOException {
+		login.Click_Login_Signup();
+		login.Email();
+		login.continue1();
+		login.password();
+		login.sumbit();
+
+	}
+
+	@Test(dependsOnMethods = "verifyUserCanLogin")
+	public void VerifyUser() throws IOException {
+
+		home.clickOnAccount();
+		String email = home.GetEmailIdText();
+		String realemail = util.getDataFromPropertyFile("email");
+		Assert.assertEquals(email, realemail);
+	}
+	@AfterMethod
+	public void report(ITestResult result) throws IOException {
+
+		if(result.getStatus()==result.SUCCESS) {
+		test.log(Status.PASS, "Test is pass" );
+		}else {
+			test.log(Status.FAIL,"Test is failed"+ MediaEntityBuilder.createScreenCaptureFromPath("ScreenShot\\ScreenShot"+result.getName()+"s.html").build());
+		}
+		
+	}
+
+}

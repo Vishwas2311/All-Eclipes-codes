@@ -1,0 +1,33 @@
+package Calenederhandling;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class handlingwithdate {
+public static void main(String[] args) {
+	//Calendar handling 
+	
+	
+	System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.spicejet.com/");
+	
+	List<WebElement> months=driver.findElements(By.className(".css-1dbjc4n.r-1mdbw0j.r-ymttw5.r-b2dl2.r-mzjzbw.r-wk8lta.r-tvv088"));
+	
+	while(!months.contains("April")) {
+		driver.findElement(By.xpath("//g[@transform='translate(1 1)']")).click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
+}

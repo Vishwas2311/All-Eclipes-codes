@@ -1,0 +1,68 @@
+package PomClasses;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import UtilityClasses.UtilClasses;
+
+public class LoginPage extends UtilClasses {
+
+	WebDriver driver;
+
+	@FindBy(xpath = "//div[contains(@class,'btn51Btn')]")
+	private WebElement Login_Signup;
+
+	@FindBy(xpath = "//input[@id='login_email1']")
+	private WebElement Email;
+
+	@FindBy(xpath = "//span[@class='absolute-center']")
+	private WebElement continue1;
+
+	@FindBy(xpath = "//input[@id='login_password1']")
+	private WebElement password;
+
+	@FindBy(xpath = "//div[@class='col l12 leps592LoginButton']")
+	private WebElement sumbit;
+
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	public void Login_Signup() throws IOException {
+		explicitwait(driver, Login_Signup);
+		Login_Signup.click();
+
+	}
+
+	public void Email() throws IOException {
+		explicitwait(driver, Email);
+		Email.sendKeys(getDataFromPropertyFile("email"));
+	}
+
+	public void continue1() {
+		continue1.click();
+	}
+
+	public void password() throws IOException {
+		explicitwait(driver, password);
+		password.sendKeys(getDataFromPropertyFile("password"));
+	}
+
+	public void sumbit() throws IOException {
+		sumbit.click();
+	}
+
+	public void PIN() throws IOException {
+		String pin = getDataFromPropertyFile("pin");
+		char[] single = pin.toCharArray();
+		for(char digit:single) {
+			
+		}
+	}
+
+}

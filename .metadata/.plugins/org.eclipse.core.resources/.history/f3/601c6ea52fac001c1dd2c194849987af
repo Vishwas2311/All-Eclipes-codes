@@ -1,0 +1,32 @@
+package Quesions;
+
+
+
+
+
+
+public class EvenOddFromNumber {
+
+	public static void main(String[] args) {
+	
+		int even=0;
+		int odd=0;
+		
+		int number=12345;
+	 while (number>0) {
+		 
+		 int rem=number%10;   //5
+	     
+		if( rem%2==0) {       //5%2= not possible
+			even++;
+		}
+		else {
+			odd++;	          // 
+		}
+		number=number/10;
+	 }
+	 
+	System.out.println(even);
+	System.out.println(odd);
+}
+}

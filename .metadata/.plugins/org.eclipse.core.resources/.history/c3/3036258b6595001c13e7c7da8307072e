@@ -1,0 +1,18 @@
+package exception;
+
+public class Exceptions {
+	public static void main(String[] args) {
+		
+		System.out.println("vishwas lerned java coding successfully");
+		                                //checked Exception  
+		//Thread.sleep(4000);          //Interrupted Exceptions.
+		
+		
+		
+		int a=133;
+		
+		System.out.println(a/0);      //this is called as Unchecked Exception
+                                      //ArithmeticException
+}
+
+}

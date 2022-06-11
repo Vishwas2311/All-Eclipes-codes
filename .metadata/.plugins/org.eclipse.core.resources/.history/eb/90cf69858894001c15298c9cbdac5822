@@ -1,0 +1,61 @@
+package inheritance;
+public class Overloading1 {
+	
+	class Bank          //definition 
+	{                                            //OVERRIDING class
+		int ROI ()      //body                        /*Definition is same but body is different */
+		{
+			return 0;
+		}
+	}
+	
+	class SBI extends Bank
+	{
+		int ROI ()                      //overriden
+		{
+			return 10;
+		}
+	}
+	
+	class Icici extends Bank
+	{
+		int ROI()                      //overriden
+		{
+			return 30;
+		}
+		
+	}
+	
+	class AXIS  extends Bank
+	{
+		int ROI()                      //overriden  
+		{
+			return 35;
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Overloading1 RBI = new Overloading1();
+		
+ 
+		
+		SBI state = new SBI(); 
+		System.out.println(state.ROI());
+		
+		
+		
+		Icici Bank2=new Icici ();
+		System.out.println(Bank2.ROI());
+		
+		
+		AXIS Bank3= new AXIS();
+		System.out.println(Bank3.ROI());
+		
+		
+		
+		
+		
+	}
+
+}

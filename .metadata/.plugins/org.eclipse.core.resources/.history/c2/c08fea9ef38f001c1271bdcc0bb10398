@@ -1,0 +1,45 @@
+package genericCodeAMAZON;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DynamicSyntax {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+
+		System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		
+		//this will give us the over all list of the Products Present on the WEB PAGE
+      List<WebElement> allProducts =   (List<WebElement>) driver.findElement(By.xpath("h4.product-name"));
+		for(int i=0;i<allProducts.size(); i++ )
+		{
+			String buying = allProducts.get(i).getText();
+			
+			if (allProducts.contains("cucumber"))
+			{
+				driver.findElement(By.xpath("//button[contains(text(),'ADD')]")).getText();
+			}
+			
+			break;
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

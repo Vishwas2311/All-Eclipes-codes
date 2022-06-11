@@ -1,0 +1,39 @@
+package staticNONstatic;
+
+import java.io.PrintStream;
+
+public class SYSO {
+
+	   static  String[] OUT ={"you are successfully logged in"};
+	   
+	   //String Literal
+	   static   String NoVariable = "hello world java";            
+	   
+	   
+	   static PrintStream out;      
+	   
+	   
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int p =SYSO.OUT.length;
+         System.out.println(p);
+ 		
+         int k=OUT.length;
+ 		System.out.println(k);
+ 		
+        int d=NoVariable.length();
+	System.out.println(d);
+		
+SYSO.out.println("why system.out.println is use to print ");
+	
+/* IN system.out.println
+SYSTEM  =   as a CLASS
+OUT     = is as a variable 
+PRINTLN = is printing method from "PrintStream" package
+
+*/
+
+	}
+	
+}

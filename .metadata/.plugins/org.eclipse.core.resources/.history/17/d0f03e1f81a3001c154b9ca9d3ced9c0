@@ -1,0 +1,43 @@
+package ScrollingWebpage;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Scrolling {
+public static void main(String[] args) throws InterruptedException {
+	
+	
+
+	System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+	
+	//this the method to enter in the JAVA Script
+	JavascriptExecutor js= (JavascriptExecutor)driver;
+	
+	//this the the Script to write the JAVA Script
+	js.executeScript("window.scrollBy(0,500)");
+	
+	Thread.sleep(2000);
+	//this is for Specific Window with CSS selector
+	js.executeScript("document.querySelector('.tableFixHead').scrollBy(0,400)");
+	
+List<WebElement>  values=driver.findElements(By.cssSelector(".tableFixHead td:nth-child(4)")); 
+	int allsum=0;
+    for(int i=1;i<=values.size();i++) {
+    	
+    	int sum = Integer.parseInt(values.get(i).getText());
+    	 
+    	 allsum=allsum+sum;
+    	 
+    }	System.out.println(allsum);
+
+
+	
+}
+}

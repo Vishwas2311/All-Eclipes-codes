@@ -1,0 +1,59 @@
+package Arrays;
+
+public class SUM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//to get the sum of all numbers 
+		int[] arrays= {12,45,78,45,89,24};
+		int sum=0;
+		for(int elements:arrays) {
+			sum =sum+elements;
+		}
+		System.out.println(sum);
+		
+		
+		//to find the one number from the list
+		int a=8;
+		boolean same= false; 
+		for(int everyarray:arrays) {
+			if(everyarray==a) {
+				 same = true ;
+				 break;        //this will break the loop 
+			}
+		}
+		
+		if(same) {
+			System.out.println("enterred we got the same arrays");
+		}
+		else {
+			System.out.println("enterred not found the arrays");
+		}
+		
+		
+		//average of the arrays will be below 
+		int sum1 = 0;
+		for(int arrays1:arrays){
+			 sum1 =arrays1 + sum1;
+		}
+		
+		System.out.println("avarahe of all marks = "sum1 / arrays.length);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package Java.Stream;
+
+public class PrintWITHlastNAME {
+
+	//Stream will collect the data
+	//filter - it will apply the condition to the stream
+	//map-map will modify the stream as per condition
+	//for each - will help to print the statement
+	
+	
+	
+	
+	
+	
+	
+}

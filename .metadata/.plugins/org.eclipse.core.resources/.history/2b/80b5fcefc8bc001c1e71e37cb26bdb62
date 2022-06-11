@@ -1,0 +1,21 @@
+
+public class classd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="mmababctamantlslwgikl";
+	    int distinct = 0 ;
+
+	    while(s.length()>0){
+	        
+	        for (int j = 0; j < s.length(); j++) {
+
+	            if(s.charAt(0)==s.charAt(j))
+	            {
+	                distinct++;
+
+	            }
+	        }   
+	}System.out.println(s.charAt(0)+"--"+distinct);
+
+}}

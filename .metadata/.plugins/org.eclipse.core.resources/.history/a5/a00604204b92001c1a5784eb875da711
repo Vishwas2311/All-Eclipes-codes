@@ -1,0 +1,62 @@
+package constructor;
+public class employeeDetail {
+
+	//Constructor 
+	//
+	
+	int employeeNO;
+	String employeeName;
+	String department;                //non static global
+	int salary;
+	String Bankname;
+	String Branchcode;
+	int AccountNo;	
+    private employeeDetail(int a,String b,String c, int d )         //this is constructor should have same class name 
+	{
+	    employeeNO=a;
+	    employeeName=b;
+	    department=c;
+		salary=d;
+		System.out.println(employeeNO);
+		System.out.println(employeeName);
+		System.out.println(department);
+		System.out.println(salary);
+		}
+	private  employeeDetail(String x,String y,int z )                 //this is also constructor 
+	{
+		Bankname=x;
+		Branchcode=y;
+		AccountNo=z;
+		
+	System.out.println(x);
+	System.out.println(y);
+	System.out.println(z);
+	
+	}
+	
+	 void METHOD()                                   //just to display the OUTPUTof methods
+	{
+		System.out.println("today is Holiday");
+		System.out.println(Branchcode);
+	}	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        //Using Constructor values are assigned.
+		employeeDetail employee1 = new employeeDetail(23,"Vishwas Shinde","Qa Automation", 130000);
+		employeeDetail employee2 = new employeeDetail(59,"Suraj","SEDT",54000 );
+         new employeeDetail("SBI", "PUNE", 123456789);     
+	     new employeeDetail("UBI", "Dighi", 987654321);
+	    
+	     //class called with Object METHOD
+	     employeeDetail k = new employeeDetail(12,"today","holiday",56);
+	     k.METHOD();
+	
+	     k.Branchcode="SBIN0000470";
+	     k.METHOD();
+	
+	
+
+	}	
+}

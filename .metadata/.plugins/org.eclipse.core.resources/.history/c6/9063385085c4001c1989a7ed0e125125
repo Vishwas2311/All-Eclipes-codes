@@ -1,0 +1,26 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class DemoDDT {
+public static void main(String[] args) throws FileNotFoundException {
+	
+	
+	FileInputStream FIS=new FileInputStream("V:\\Self study\\Data Driven Testing with Excel");
+	
+	XSSFWorkbook WorkBook = new XSSFWorkbook();
+	
+	int sheets=WorkBook.getNumberOfSheets();
+	
+	for(int i=0; i<=sheets;i++) {
+		if (WorkBook.getSheetName(i).equalsIgnoreCase("TestData1")) {
+			
+			XSSFSheet sheet=WorkBook.getSheetAt(i);
+		}
+		
+	}
+	
+}
+}

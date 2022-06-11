@@ -1,0 +1,48 @@
+package object;
+
+public class ObjectCreation {
+	String bankname;
+	int BankerNO;
+	String Name;
+	String address;
+	
+	void Display()
+	{
+		System.out.println(bankname);
+		System.out.println(BankerNO);
+		System.out.println(Name);
+		System.out.println(address);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	//Directly Assigning the Values to the OBJECTS (Directly)
+    //Assigning values to  class variable using OBJECT.METHOOD
+	//object created	
+	ObjectCreation Banker1 = new ObjectCreation();
+	
+	//will call the object using Object.MEthod
+	Banker1.bankname="SBI";
+	Banker1.BankerNO=298;
+	Banker1.Name="Rohit";
+	Banker1.address="PUNE";
+	Banker1.Display();
+	
+	
+	//baker No 2 with same Method with giving the value
+	ObjectCreation Banker2 = new ObjectCreation();
+	Banker2.bankname="Axis Bank";
+	Banker2.BankerNO=005;
+	Banker2.Name="Akshay";
+	Banker2.address="Hadapsar";
+	Banker2.Display();
+	
+	
+	
+	
+	
+	
+		}
+
+}

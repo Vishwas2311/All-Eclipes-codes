@@ -1,0 +1,29 @@
+package zebra;
+
+public class staticWord {
+
+ static int count = 0 ;
+
+public static void count() {
+
+	//after use of local variable is collecting in garbage value;
+	int e=0;
+	e ++ ;
+	System.out.println(e);
+	
+	//if it i static it is declared it wont go in garbage collection
+	count ++;
+	System.out.println(count);
+}
+	
+	
+	public static void main(String[] args) {
+	
+	    count();
+		count();
+	
+	// used for memory management purpose
+	
+	
+}
+}

@@ -1,0 +1,33 @@
+package LambdaTest;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Assignment {
+public static void main(String[] args) {
+	
+	System.setProperty("webdriver.chrome.driver","V:\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.lambdatest.com/");
+	WebDriverWait explicit= new WebDriverWait(driver, 7);
+	List<WebElement> wait = explicit.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[.='See All Integrations']")));
+	
+	JavascriptExecutor java =(JavascriptExecutor)driver;
+	java.executeScript("window.scrollBy(0,4500)");
+	
+	
+	
+	
+	
+	
+	
+	
+}
+}

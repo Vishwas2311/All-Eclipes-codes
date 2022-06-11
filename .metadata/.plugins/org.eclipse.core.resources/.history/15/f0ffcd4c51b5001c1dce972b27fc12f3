@@ -1,0 +1,20 @@
+package Arrays;
+
+import java.util.Arrays;
+
+public class Copyofarray {
+public static void main(String[] args) {
+	
+	String array ="vishwas babasaheb shinde";
+	String[] splited = array.split(" ");
+	
+	System.out.println(Arrays.toString(splited));
+	
+	String [] copy= Arrays.copyOf(splited, 3);
+	
+	System.out.println(copy);
+	
+	
+	
+}
+}

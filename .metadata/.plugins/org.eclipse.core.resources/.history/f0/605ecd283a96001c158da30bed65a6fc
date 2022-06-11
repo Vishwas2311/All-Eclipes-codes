@@ -1,0 +1,29 @@
+package genericCodeAMAZON;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Amazon {
+public static void main(String[] args) throws InterruptedException {
+	
+
+System.setProperty("webdriver.chrome.driver", "V:\\\\chromedriver_win32\\\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));	
+driver.get("https://www.amazon.in/?&ext_vrnc=hi&tag=googhydrabk1-21&ref=pd_sl_5szpgfto9i_e&adgrpid=58075519359&hvpone=&hvptwo=&hvadid=486462454211&hvpos=&hvnetw=g&hvrand=4012295641534483132&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062111&hvtargid=kwd-64107830&hydadcr=14452_2154371&gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4sDpxfhRIZ3lBlQlP7_Bcw9TMvlcgk1nId1vL1b3DfRS2AnCseqdEaAqCAEALw_wcB");
+driver.findElement(By.xpath("//span[contains(text(),'Account & Lists')]")).click();
+driver.findElement(By.cssSelector("input.a-input-text.a-span12.auth-autofocus.auth-required-field")).sendKeys("9130473742");
+driver.findElement(By.id("continue")).click();
+driver.findElement(By.id("ap_password")).sendKeys("suraj26867648");
+Thread.sleep(1000);
+driver.findElement(By.id("signInSubmit")).click();
+
+
+}
+
+}

@@ -1,0 +1,21 @@
+package Arrays;
+
+import java.util.Arrays;
+
+public class Copyofarray {
+public static void main(String[] args) {
+	
+	String array ="vishwas babasaheb shinde";
+	//dividing in to single single arrays
+	String[] splited = array.split(" ");
+	//Printing
+	System.out.println(Arrays.toString(splited));
+	// ,
+	String [] copy= Arrays.copyOf(splited, 1);
+	
+	System.out.println(Arrays.toString(copy));
+	
+	
+	
+}
+}

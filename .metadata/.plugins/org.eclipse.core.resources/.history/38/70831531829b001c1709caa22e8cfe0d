@@ -1,0 +1,63 @@
+package practice;
+
+import java.util.Scanner;
+
+public class Primenumber {
+public static void main(String[] args) {
+	
+	
+	Scanner scr =new Scanner(System.in);
+	System.out.println("enter the first value");
+	int from=scr.nextInt();
+	System.out.println("enter the second value");
+	int to=scr.nextInt();
+	
+	boolean value=false;
+for(int j=from;j<=to;j++) {	
+for(int i=2;i<=j/2;i++) {
+	if(j%i==0) {
+		System.out.println("not prime number");
+		 value = true;
+		 break;
+	}
+	
+}
+if(!value) {
+	System.out.println("this is prime number");
+}
+}
+	
+/*
+ scr =new Scanner(System.in);
+System.out.println("enter the value");
+int n=scr.nextInt();
+
+
+boolean v1=false;
+
+for(int i=2;i<=n/2;i++) {
+if(n%i==0) {
+	System.out.println("not prime number");
+	 v1 = true;
+	 break;
+}
+
+}
+if(!v1) {
+System.out.println("this is prime number");
+}
+*/
+
+
+
+
+
+
+
+
+
+
+	
+	
+}
+}

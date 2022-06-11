@@ -1,0 +1,31 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LinkHandling {
+public static void main(String[] args) {
+	
+	
+	System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
+	
+	
+	//No of links on the page
+	System.out.println(driver.findElements(By.tagName("a")).size());
+	
+	//scope of footer links only
+	WebElement footer = driver.findElement(By.id("gf-BIG"));
+	System.out.println(footer.findElements(By.tagName("a")).size());
+	
+	//count of the first column
+	WebElement footercolumn = footer.findElement(By.xpath("//table/tbody/tr/td[1]/ul"));
+	System.out.println(footercolumn.findElements(By.tagName("a")).size());
+	
+	
+	
+	
+}
+}

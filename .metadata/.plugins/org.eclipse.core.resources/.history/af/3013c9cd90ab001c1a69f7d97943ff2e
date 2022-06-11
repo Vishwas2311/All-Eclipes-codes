@@ -1,0 +1,16 @@
+package Quesions;
+
+public class ReversString {
+public static void main(String[] args) {
+	   
+	StringBuilder k =new StringBuilder();
+	k.append(4657);
+	k.reverse();
+System.out.println(k);
+	
+	
+	
+	
+
+}
+}

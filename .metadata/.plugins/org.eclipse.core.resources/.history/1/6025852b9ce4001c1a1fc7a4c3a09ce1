@@ -1,0 +1,53 @@
+package Groww;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import BaseClasses.BaseClass1;
+import PomClasses.HomePage;
+import PomClasses.LoginPage;
+import UtilityClasses.UtilClasses;
+
+public class Groww {
+	static WebDriver driver;
+	static HomePage home;
+	static LoginPage login;
+	static UtilClasses util;
+
+	@Parameters("Browser")
+	@BeforeClass
+	public void beforeclass(String Bname) {
+
+		driver = BaseClass1.WebDriver(Bname);
+	}
+
+	@BeforeMethod
+	public void BeforeMethod() {
+		home = new PomClasses.HomePage(driver);
+		login = new PomClasses.LoginPage(driver);
+		util = new UtilityClasses.UtilClasses();
+	}
+
+	@Test
+	public void verifyUserCanLogin() throws IOException {
+		login.Email();
+		login.continue1();
+		login.password();
+		login.sumbit();
+
+	}
+
+	@Test
+	public void VerifyUser() {
+
+		home.clickOnAccount();
+		home.GetEmailIdText();
+		
+	}
+
+}

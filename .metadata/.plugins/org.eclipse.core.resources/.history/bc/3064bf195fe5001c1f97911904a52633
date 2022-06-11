@@ -1,0 +1,46 @@
+package Listeners;
+
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+
+public class Listeners {
+	public void onTestStart(ITestResult result) {
+		// not implement
+		System.out.println("On test start");
+	}
+
+	public void onTestSuccess(ITestResult result) {
+		// not implemented
+		System.out.println(result.getName() + " on test success");
+	}
+
+	public void onTestFailure(ITestResult result) {
+		// not implemented
+		System.out.println(result.getName() + " on test failure");
+	}
+
+	public void onTestSkipped(ITestResult result) {
+		// not implemented
+		System.out.println(result.getName() + " on test skipped");
+	}
+
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// not implemented
+		System.out.println(result.getName() + " on test failed withing success percentage");
+	}
+
+	public void onTestFailedWithTimeout(ITestResult result) {
+		onTestFailure(result);
+		System.out.println(result.getName() + "  on test failed with timeout");
+	}
+
+	public void onStart(ITestContext context) {
+		// not implemented
+		System.out.println("on  start");
+	}
+
+	public void onFinish(ITestContext context) {
+		// not implemented
+		System.out.println("on finish");
+	}
+}

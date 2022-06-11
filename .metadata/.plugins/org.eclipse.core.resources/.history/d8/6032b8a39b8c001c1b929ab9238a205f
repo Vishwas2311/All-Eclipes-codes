@@ -1,0 +1,43 @@
+package introduction;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SpicejetAutomatin {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		
+		System.setProperty("webdriver.chrome.driver", "V:\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver =new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get("https://www.spicejet.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[text()='1 Adult']")).click();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//div[@data-testid='Adult-testID-plus-one-cta']")).click();       this is the single click for Adults
+		
+		int i=1;
+		while (i<9)
+		{
+			driver.findElement(By.xpath("//div[@data-testid='Adult-testID-plus-one-cta']")).click();
+			i++;
+		}
+		
+		
+		
+		
+		
+		
+
+
+	}
+
+}

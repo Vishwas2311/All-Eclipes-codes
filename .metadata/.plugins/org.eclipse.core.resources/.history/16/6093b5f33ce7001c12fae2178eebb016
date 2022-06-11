@@ -1,0 +1,97 @@
+package Groww;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import BaseClasses.BaseClass1;
+import PomClasses.HomePage;
+import PomClasses.LoginPage;
+import UtilityClasses.UtilClasses;
+
+public class Groww {
+	static WebDriver driver;
+	static HomePage home;
+	static LoginPage login;
+	static UtilClasses util;
+
+	static ExtentHtmlReporter htmlreporter;
+	static ExtentReports reports;
+	
+	static ExtentTest test;
+
+	
+
+	@Parameters("Browser")
+	@BeforeClass
+	public void beforeclass(String Bname) {
+		
+		htmlreporter = new ExtentHtmlReporter("ExtentReporter.html");
+		reports = new ExtentReports();
+		reports.attachReporter(htmlreporter);
+		test = reports.createTest("Groww");
+		driver = BaseClass1.WebDriver(Bname);
+	}
+
+	@BeforeMethod
+	public void BeforeMethod() {
+		home = new PomClasses.HomePage(driver);
+		login = new PomClasses.LoginPage(driver);
+		util = new UtilityClasses.UtilClasses();
+
+	}
+
+	@Test
+	public void verifyUserCanLogin() throws IOException {
+		login.Click_Login_Signup();
+		login.Email();
+		login.continue1();
+		login.password();
+		login.sumbit();
+		login.PIN();
+
+	}
+
+	@Test(dependsOnMethods = "verifyUserCanLogin")
+	public void VerifyUser() throws IOException {
+
+		home.clickOnAccount();
+		String email = home.GetEmailIdText();
+		String realemail = util.getDataFromPropertyFile("email");
+		Assert.assertEquals(email, realemail);
+	}
+
+	@AfterMethod
+	public void report(ITestResult result) throws IOException {
+
+		if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, "Test is pass");
+		} else {
+			// taking the string from screen shot method
+			String getscreenshot = UtilClasses.getscreenForExtentReport(driver, result.getName());
+			
+			test.log(Status.FAIL,"Test is failed" + MediaEntityBuilder.createScreenCaptureFromPath(getscreenshot).build());
+		}
+
+	}
+	
+	@AfterClass
+	public void abcd(){
+		reports.flush();
+	}
+
+
+}

@@ -1,0 +1,22 @@
+package practice;
+
+import java.util.Scanner;
+
+public class pallindrome {
+	public static void main(String[] args) {
+		
+		
+		Scanner scr=new Scanner(System.in);
+		int number =scr.nextInt();      //756
+		int rem;
+		int sum = 0;
+		while(number>0) {
+			rem=number%10;              //6
+			sum=(sum*10)+rem;           //sum=(0*10)+6......sum=6      
+			
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,48 @@
+package Java.Stream;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class ConcatinationARRAY {
+private static final Stream<String> StramName = null;
+
+
+public static void main(String[] args) {
+	//Concatenating  Two Array LIST into Stream and directly applying condition modification
+
+	// Declaring the Array list
+	List<String> names=Arrays.asList("Accrenture","Zescal","Amazon","Flipkart","Adam","Alekhya","Aradhya");
+	//Declaring the 2nd ARRAY List
+	List<String> names2=Arrays.asList("Arun","Avinash","Aradhya","Arya","Ashish");
+	
+	//concating the stream and String into the Stream.
+	Stream<String> StramName =Stream.concat(names.stream(), names2.stream());
+
+	//after storing steam no need to apply stream again.
+	StramName.sorted().map(s->s.toUpperCase()).forEach(s->System.out.println(s));
+	
+	
+	//using of Assert with Booleans
+	
+	
+	
+	
+}
+
+
+@Test
+public void Boolean() {
+
+boolean identifier = StramName.anyMatch(s->s.equalsIgnoreCase("Arun"));
+	
+	System.out.println(identifier);
+	Assert.assertTrue(identifier);
+}
+
+
+
+}

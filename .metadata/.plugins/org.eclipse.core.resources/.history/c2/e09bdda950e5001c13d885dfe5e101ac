@@ -1,0 +1,23 @@
+package zebra;
+
+public class staticWord {
+int a=0;
+static int count = 0 ;
+
+public void count(){
+         count ++;
+	System.out.println(count);
+}
+	
+	
+	public static void main(String[] args) {
+	
+	
+		staticWord.count f=new count();
+		
+	
+	
+	
+	
+}
+}

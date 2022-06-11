@@ -1,0 +1,69 @@
+package Quesions;
+
+public class SwappingNumbers {
+public static void main(String[] args) {
+
+	
+//LOGIC 1
+	//Swapping
+
+	int a=300;
+	int b =484;
+	System.out.println("a = " + a + "  b = " + b);
+
+	//Third variable for swapping
+	int c;
+	c = a;
+	a = b;
+	b = c;
+	//interchanged the values and swapped
+	System.out.println("after swapping  a= " + a + "  b = " + b);
+	
+	
+//LOGIC 2 (without using third variable)	
+	
+	int X=900;
+	int Y =800;
+	System.out.println("X = " + X + "  Y = " + Y);
+	
+	X=X+Y; //900+800 =1700
+	Y=X-Y; //1700-800 = 900
+	X=X-Y; //1700-900= 800
+	System.out.println("X = " + X + "  Y = " + Y);
+	
+	
+//LOGIC 3 (A & B should not be ZERO)
+	
+	int p=90;
+	int q =80;
+	System.out.println("p = " + p + "  q = " + q);
+	
+	p=p*q;   ///90*80=720
+	q=p/q;   //720/80=90
+	p=p/q;   //720/90=80
+	System.out.println("p = " + p + "  q = " + q);
+	
+//Logic 4
+	
+	int y =90;
+	int o =80;
+	
+	System.out.println("y = " + y + "  o = " + o);
+	
+	y=y^o;   
+	o=y^o;   
+	y=y^o;
+	System.out.println("y = " + y + "  o = " + o);
+	
+//LOGIC 5
+	
+	int e =30;
+	int f =40;
+	
+	System.out.println("e = " + e + "  f = " + f);
+	
+	f=e+f-(e=f);   
+	
+	System.out.println("e = " + e + "  f = " + f);
+}
+}

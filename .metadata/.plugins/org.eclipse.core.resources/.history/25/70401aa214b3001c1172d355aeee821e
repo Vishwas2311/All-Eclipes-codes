@@ -1,0 +1,18 @@
+
+public class publicStaticVoidmain {
+    
+	int mobile =20;
+
+	
+	private publicStaticVoidmain() {
+		String a= "velocity";
+		
+	}
+	
+	public static void main(String[] args) {
+		publicStaticVoidmain k = new publicStaticVoidmain();
+		k.mobile=699;
+	}
+	
+	
+}

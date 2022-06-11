@@ -1,0 +1,46 @@
+package String1;
+
+import java.util.Arrays;
+
+public class Revers {
+
+	public static void main(String[] args) {
+		
+	
+		String a= new String("Accenture RedHat Paytm Oracle IBM");
+		String [] b = a.split(" ");
+		System.out.println(Arrays.toString(b));
+		
+	
+		
+		for(int i=0; i<= b.length;i++) {
+			//call word
+			String Word = b[i];
+			String  RWord ="";
+			for(int j =Word.length()-1;j>=0;j--) {
+				
+				RWord = RWord + Word.charAt(j);
+			}
+			System.out.print(RWord);
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	}}
+

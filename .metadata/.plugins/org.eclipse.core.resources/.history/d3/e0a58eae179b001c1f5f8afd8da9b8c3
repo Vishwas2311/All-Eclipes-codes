@@ -1,0 +1,19 @@
+package Arrays;
+
+import java.util.Arrays;
+
+public class ReversArray {
+public static void main(String[] args) {
+	
+	
+	int[] r= {23,56,89,56,89,34,67,56,54,32};
+	System.out.println("length o the array : "+ r.length);
+	System.out.println(Arrays.toString(r));
+	
+	
+
+	
+	
+	
+}
+}
